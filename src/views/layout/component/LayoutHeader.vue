@@ -1,5 +1,6 @@
 <script setup>
 import { useCategoryStore } from '@/stores/category';
+import HeaderCart from './HeaderCart.vue'
 //因为页面已加载完成，这里直接接收store里面存储好的state
 
 const categorystore=useCategoryStore()
@@ -24,10 +25,7 @@ const categorystore=useCategoryStore()
     <input type="text" placeholder="搜一搜">
      </div>
      <div class="header-cart">
-        <RouterLink to="/">
-            <i class="iconfont icon-cart "></i> 
-            <em>3</em>
-        </RouterLink>
+                <HeaderCart/>
     </div>
     </div>
  </header>
@@ -92,21 +90,7 @@ const categorystore=useCategoryStore()
         line-height: 32px;
         text-align: center;
         position:relative;
-        .icon-cart{
-            font-size: 22px;
-        }
-        em{
-            position: absolute;
-            top: 0;
-            right:0;
-            padding: 1px 6px;
-            font-size: 12px;
-            line-height: 1;
-            border-radius: 10px;
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: $helpColor;
-            color: #fff;
-        }
+       
     }
    }
 }

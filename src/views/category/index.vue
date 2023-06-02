@@ -10,7 +10,7 @@ const {categoryList}=useCategory()
 </script>
 <template>
     <div class="top-category">
-        <div class="container m-top-20">
+        <div class="container ">
         <!--面包屑 -->
         <div class="bread-container">
             <el-breadcrumb separator=">">
@@ -31,7 +31,7 @@ const {categoryList}=useCategory()
         <h3>全部分类</h3>
         <ul>
             <li v-for="i in categoryList.children" :key="i.id">
-            <router-link to="/">
+            <router-link :to="`/category/sub/${i.id}`">
                 <img v-img-lazy="i.picture" alt="">
                 <p>{{ i.name }}</p>
             </router-link>

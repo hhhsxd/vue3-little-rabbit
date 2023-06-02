@@ -11,7 +11,7 @@ onMounted(()=>getcate(route.params.id))
 //这里解决路由缓存问题
 //用下面这个钩子函数在router更新前执行
 onBeforeRouteUpdate((to)=>{
-    console.log(to);
+    // console.log(to);
     getcate(to.params.id)
 })
 //以对象方式导出，可以导出数据以及方法

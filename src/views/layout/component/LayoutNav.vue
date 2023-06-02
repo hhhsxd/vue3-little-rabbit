@@ -1,5 +1,14 @@
 <script setup>
- 
+import { useUserStore } from '@/stores/userinfo';
+import {useRouter} from 'vue-router'
+const userStore=useUserStore()
+const router=useRouter()
+const confirm=()=>{
+  console.log('用户要退啦');
+  userStore.clearUserInfo()
+ router.push('/login')
+  
+}
 </script>
 
 <template>
@@ -7,8 +16,8 @@
  <nav class="app-topnav">
     <div class="container">
         <ul>
-            <template v-if="true">
-              <li><a href="javascript:;"><i class="iconfont icon-user"></i>德华</a></li>
+            <template v-if="userStore.userInfo.token">
+              <li><a href="javascript:;"><i class="iconfont icon-user"></i>{{ userStore.userInfo.nickname }}</a></li>
               <li>
                 <el-popconfirm @confirm="confirm" title="确认退出登录吗" confirm-button-text="确认" concel-button-text="取消">
                     <template #reference>
@@ -16,8 +25,8 @@
                     </template>
                 </el-popconfirm>
               </li>
-              <li><a href="javascript:;">我的订单</a></li>
-              <li><a href="javascript:;">会员中心</a></li>
+              <li><router-link to="/member/order">我的订单</router-link></li>
+              <li><router-link to="/member">会员中心</router-link></li>
             </template>
             <template v-else>
               <li><a href="javascript:;" @click="$router.push('/login')">请先登录</a></li>
