@@ -1,6 +1,6 @@
-## 测试账号
-手机号：12056258282 ~ 12056258293 
-密码：hm#qd@23!
+## test number
+fake phone number：12056258282 
+password：hm#qd@23!
 ## Project Setup
 
 ```sh
