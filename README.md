@@ -1,6 +1,10 @@
 ## test number
 fake phone number：12056258282 
 password：hm#qd@23!
+## alipay sandbox
+email:jfjbwb4477@sandbox.com
+password:111111
+pay password:111111
 ## Project Setup
 
 ```sh
